@@ -1,10 +1,25 @@
 import './App.css'
+import {React, useState}  from 'react'
+import Banner from './components/Banner'
+import NewEntry from './components/NewEntry'
+import OrganizeList from './components/OrganizeList'
+import EntryList from './components/EntryList'
+import Footer from './components/Footer'
+
 
 function App() {
-  
+  const [sortBy, setSortBy] = useState('date');
 
   return (
-    <h1>Service Dogs Around Town</h1>
+    <div>
+      <Banner />
+      <NewEntry />
+      <OrganizeList 
+      sortBy={sortBy}
+      />
+      <EntryList />
+      <Footer />
+    </div>
   )
 }
 
