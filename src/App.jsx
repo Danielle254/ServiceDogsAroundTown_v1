@@ -10,14 +10,22 @@ import Footer from './components/Footer'
 function App() {
   const [sortBy, setSortBy] = useState('date');
 
+  function changeSort () {
+    if (sortBy === "date") {
+      setSortBy("name");
+    } else if (sortBy === "name") {
+      setSortBy("date");
+    }
+  }
+
   return (
-    <div>
+    <div className='App'>
       <Banner />
       <main>
         <NewEntry />
         <OrganizeList 
         sortBy={sortBy}
-        setSortBy={setSortBy}
+        changeSort={changeSort}        
         />
         <EntryList 
         sortBy={sortBy}
