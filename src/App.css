@@ -1,1 +1,6 @@
-/*# sourceMappingURL=App.css.map */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
