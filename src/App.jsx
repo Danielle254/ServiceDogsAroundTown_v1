@@ -13,11 +13,16 @@ function App() {
   return (
     <div>
       <Banner />
-      <NewEntry />
-      <OrganizeList 
-      sortBy={sortBy}
-      />
-      <EntryList />
+      <main>
+        <NewEntry />
+        <OrganizeList 
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        />
+        <EntryList 
+        sortBy={sortBy}
+        />
+      </main>
       <Footer />
     </div>
   )
