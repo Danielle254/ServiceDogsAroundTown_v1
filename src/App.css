@@ -14,9 +14,15 @@
 }
 
 /* Banner */
-
+h1 {
+    margin: 4rem auto;
+}
 
 /* NewEntry */
+.new--entry {
+    background-color: lightpink;
+}
+
 form {
     margin: 2rem auto;
     /* display: flex;
@@ -28,12 +34,15 @@ form {
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: gray;
+    margin: 2rem auto;
 }
 
 .sort {
     display: flex;
     flex-direction: row;
+    margin-right: 4rem;
 }
 
 /* EntryList */
@@ -44,3 +53,6 @@ form {
 
 
 /* Footer */
+footer {
+    background-color: lightblue;
+}
