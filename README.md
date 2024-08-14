@@ -1,8 +1,21 @@
-# React + Vite
+# Service Dogs Around Town - Version 1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This initial version will use React and local storage.
 
-Currently, two official plugins are available:
+## Data points will include:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Business Name (manual entry)
+* Personal Note
+* Favorite (boolean)
+
+
+View full planning document
+[https://docs.google.com/document/d/1qis5J6LwGeG49rQRjwhjirpdhUqHIUrBGo0ejoxNWIA/edit?usp=sharing](https://docs.google.com/document/d/1qis5J6LwGeG49rQRjwhjirpdhUqHIUrBGo0ejoxNWIA/edit?usp=sharing)
+
+
+## User Flow
+
+* Arrive at homepage
+* Options: view entries, add new entry, view favorites
+
+
