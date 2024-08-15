@@ -28,6 +28,15 @@ function App() {
     setData([...data, entry]);    
   }
 
+  function deleteEntry (id) {
+    setData(prevData => {
+      const newData = prevData.filter(
+        item => item.id !== id
+      )
+      return newData;
+    })
+  }
+
   function changeSort () {
     if (sortBy === "date") {
       setSortBy("name");
@@ -52,6 +61,7 @@ function App() {
         <EntryList 
         sortBy={sortBy}
         data={data}
+        deleteEntry={deleteEntry}
         />
       </main>
       <Footer />
