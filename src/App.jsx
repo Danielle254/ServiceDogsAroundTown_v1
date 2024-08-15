@@ -9,15 +9,8 @@ import Footer from './components/Footer'
 
 function App() {
   const [sortBy, setSortBy] = useState('date');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
 
-  // retrieve any stored user entries from local storage upon initial app load
-  useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('SDAT_data'));
-    if (storedData) {
-      setData(storedData);
-    }
-  }, []);
 
   // update local storage when list of entries changes
   useEffect(() => {
