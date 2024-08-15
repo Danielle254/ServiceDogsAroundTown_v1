@@ -9,7 +9,7 @@ export default function Entry(props) {
       <p>{props.isFavorite ? "❤️" : "🤍"}</p>
       <p>{props.personalNote}</p>
       <button>Edit</button>
-      <button onClick={props.deleteEntry(props.id)}>Delete</button>
+      <button /* onClick={() => props.deleteEntry(props.id)} */>Delete</button>
     </div>
   )
 }

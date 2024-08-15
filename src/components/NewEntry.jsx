@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import {v4 as uuidv4} from 'uuid'
 
 export default function NewEntry(props) {
+
   const [businessName, setBusinessName] = useState('');
   const [personalNote, setPersonalNote] = useState('');
   const [initializeFavorite, setInitializeFavorite] = useState(false);
@@ -21,7 +22,12 @@ export default function NewEntry(props) {
   return (
     <div className='new--entry'>
       <h2>Add New Entry</h2>
-      <form onSubmit={props.addEntry(newEntry)}>
+      <form onSubmit={(e) => {
+        props.addEntry(e, newEntry);
+        setBusinessName("");
+        setInitializeFavorite(false);
+        setPersonalNote("");
+      }}>
         <label>Business Name:
           <input 
           required
@@ -48,6 +54,8 @@ export default function NewEntry(props) {
           onChange={(e) => setPersonalNote(e.target.value)}
           />
         </label>
+        <br/>
+        <input type='submit'/>
       </form>
     </div>
   )

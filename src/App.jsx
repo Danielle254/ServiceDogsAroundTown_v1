@@ -24,7 +24,8 @@ function App() {
     localStorage.setItem('SDAT_data', JSON.stringify(data));
   }, [data]);
 
-  function addEntry (entry) {
+  function addEntry (e, entry) {
+    e.preventDefault();
     setData([...data, entry]);    
   }
 
