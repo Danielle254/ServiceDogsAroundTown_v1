@@ -1,8 +1,13 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0;    
+}
+
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    background-color: rgb(24, 24, 79);
+    color: white;
 }
 
 
@@ -10,7 +15,7 @@
 /* App */
 .App {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 /* Banner */
@@ -20,25 +25,32 @@ h1 {
 
 /* NewEntry */
 .new--entry {
-    background-color: lightpink;
+    background-color: rgb(36, 172, 221); 
+    width: 300px;
+    margin: 0 auto; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 10px;  
 }
 
-form {
-    margin: 2rem auto;
-    
-}
+
+
+
 
 input, textarea {
-    text-align: left;
+    text-align: left;    
 }
 
 /* OrganizeList */
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    background-color: gray;
+    justify-content: center;    
     margin: 2rem auto;
+    border: 2px lightblue solid;
+    border-radius: 5px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;    
 }
 
 .sort {
@@ -48,13 +60,23 @@ input, textarea {
 }
 
 /* EntryList */
-
+.entry--list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
 
 /* Entry */
-
+.entry p {
+    margin: 0.5rem auto;
+}
 
 
 /* Footer */
-footer {
-    background-color: lightblue;
+footer {    
+    margin-top: 6rem;
+}
+
+footer a {
+    color: white;
 }
