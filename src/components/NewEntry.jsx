@@ -29,11 +29,22 @@ export default function NewEntry(props) {
         setPersonalNote("");
       }}>
         <label>Business Name:
+          <br/>
           <input 
           required
           type='text' 
           value={businessName}
           onChange={(e) => setBusinessName(e.target.value)}
+          />
+        </label>        
+        <br/>
+        <label>Personal Note:
+          <br/>
+          <textarea 
+          required
+          type='text' 
+          value={personalNote}
+          onChange={(e) => setPersonalNote(e.target.value)}
           />
         </label>
         <br/>
@@ -44,15 +55,6 @@ export default function NewEntry(props) {
           checked={initializeFavorite}
           onChange={updateInitializeFavorite}
           />          
-        </label>
-        <br/>
-        <label>Personal Note:
-          <textarea 
-          required
-          type='text' 
-          value={personalNote}
-          onChange={(e) => setPersonalNote(e.target.value)}
-          />
         </label>
         <br/>
         <input type='submit'/>
