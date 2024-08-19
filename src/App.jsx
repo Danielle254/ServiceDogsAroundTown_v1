@@ -65,7 +65,8 @@ function App() {
         <OrganizeList 
         sortBy={sortBy}
         changeSort={changeSort}
-        toggleFilterFavorites={toggleFilterFavorites}        
+        toggleFilterFavorites={toggleFilterFavorites} 
+        filterFavorites={filterFavorites}       
         />
         <EntryList 
         data={data}
