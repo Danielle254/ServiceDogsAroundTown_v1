@@ -8,12 +8,12 @@ import Footer from './components/Footer'
 
 
 function App() {
-  const [sortBy, setSortBy] = useState(() => localStorage.getItem('SDAT_sort') || "date");
   const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
-  const [filterFavorites, setFilterFavorites] = useState(() => localStorage.getItem('SDAT_filter') || false);
-  
+  const [sortBy, setSortBy] = useState(() => JSON.parse(localStorage.getItem('SDAT_sort')) || "date");  
+  const [filterFavorites, setFilterFavorites] = useState(JSON.parse(localStorage.getItem('SDAT_filter')) || false);
+    
 
-  // update local storage when list of entries changes
+
   useEffect(() => {
     localStorage.setItem('SDAT_data', JSON.stringify(data));
   }, [data]);
@@ -33,49 +33,26 @@ function App() {
     })
   }
 
-  function compareAlpha(a,b) {
-    const name1 = a.name.toUpperCase();
-    const name2 = b.name.toUpperCase();
+  
 
-    if (name1 < name2) {
-      return -1;
-    }
-    if (name1 > name2) {
-      return 1;
-    }
-
-    return 0;
-  }
-
-  function compareDate(a,b) {
-    const date1 = new Date(a.dateVisited);
-    const date2 = new Date(b.dateVisited);
-
-    return date1 - date2;
-  }
-
-  function changeSort () {
-    setData(prevData => {
-      
-      if (sortBy === "date") {
-        setSortBy("name");
+  function changeSort () {    
+         
+      if (sortBy === "date") { 
+        setSortBy("name");       
         localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
-        return prevData.sort(compareAlpha);
       }
 
       if (sortBy === "name") {
         setSortBy("date");
-        localStorage.setItem('SDAT_sort', sortBy);
-        return prevData.sort(compareDate);
-      }
-    })    
+        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
+      }    
   }
+  
 
-  function toggleFilterFavorites () {
-    setFilterFavorites(!filterFavorites);
-    localStorage.setItem('SDAT_filter', filterFavorites);
+  function toggleFilterFavorites () {    
+    setFilterFavorites(!filterFavorites);    
+    localStorage.setItem('SDAT_filter', JSON.stringify(!filterFavorites));
   }
-
   
 
   return (
@@ -91,8 +68,8 @@ function App() {
         toggleFilterFavorites={toggleFilterFavorites}        
         />
         <EntryList 
-        sortBy={sortBy}
         data={data}
+        sortBy={sortBy}
         filterFavorites={filterFavorites}
         deleteEntry={deleteEntry}
         />
