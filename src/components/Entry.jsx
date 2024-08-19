@@ -7,8 +7,8 @@ export default function Entry(props) {
     <div className='entry'>
       <h3>{props.name} <span>{props.isFavorite ? "❤️" : ""}</span></h3>
       <p>{props.personalNote}</p>
-      <button>Edit</button>
-      <button onClick={() => props.deleteEntry(id)}>Delete</button>
+      <button className='entry--button'>Edit</button>
+      <button className='entry--button' onClick={() => props.deleteEntry(id)}>Delete</button>
     </div>
   )
 }
