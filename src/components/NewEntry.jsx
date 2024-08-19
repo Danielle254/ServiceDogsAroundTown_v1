@@ -4,6 +4,8 @@ import {v4 as uuidv4} from 'uuid'
 export default function NewEntry(props) {
 
   const [businessName, setBusinessName] = useState('');
+  const [location, setLocation] = useState('');
+  const [dateVisited, setDateVisited] = useState('');
   const [personalNote, setPersonalNote] = useState('');
   const [initializeFavorite, setInitializeFavorite] = useState(false);
 
@@ -13,6 +15,8 @@ export default function NewEntry(props) {
 
   const newEntry = {
     name: businessName,
+    location: location,
+    dateVisited: dateVisited,
     isFavorite: initializeFavorite,
     personalNote: personalNote,
     id: uuidv4()
@@ -21,7 +25,7 @@ export default function NewEntry(props) {
   
   return (
     <div className='new--entry'>
-      <h2>Add New Entry</h2>
+      <h2>Add New Business</h2>
       <form onSubmit={(e) => {
         props.addEntry(e, newEntry);
         setBusinessName("");
@@ -36,7 +40,27 @@ export default function NewEntry(props) {
           value={businessName}
           onChange={(e) => setBusinessName(e.target.value)}
           />
-        </label>        
+        </label>
+        <br />
+        <label>Location:
+          <br/>
+          <input 
+          required
+          type='text' 
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          />
+        </label>   
+        <br />
+        <label>Date Visited:
+          <br/>
+          <input 
+          required
+          type='date' 
+          value={dateVisited}
+          onChange={(e) => setDateVisited(e.target.value)}
+          />
+        </label>      
         <br/>
         <label>Personal Note:
           <br/>
@@ -51,7 +75,8 @@ export default function NewEntry(props) {
         <label>
           Favorite:
           <input 
-          type='checkbox' 
+          type='checkbox'
+          className='checkbox' 
           checked={initializeFavorite}
           onChange={updateInitializeFavorite}
           />          
