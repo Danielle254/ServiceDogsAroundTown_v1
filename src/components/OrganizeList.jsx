@@ -13,6 +13,9 @@ export default function OrganizeList(props) {
     nameButton = 'sort--button selected';
   }
   
+  const filterButton = props.filterFavorites ? "filter--button selected" : "filter--button";
+  
+  
   return (
     <div className='nav--background'>
       <div className='nav'>
@@ -23,7 +26,7 @@ export default function OrganizeList(props) {
         </div>
         <div className='filter'>
           <p>Filter By:</p>
-          <button className='filter--button' onClick={props.toggleFilterFavorites}>Favorites ❤️</button>
+          <button className={filterButton} onClick={props.toggleFilterFavorites}>Favorites ❤️</button>
         </div>
       </div>
     </div>
