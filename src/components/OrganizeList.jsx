@@ -21,7 +21,7 @@ export default function OrganizeList(props) {
         </div>
         <div className='filter'>
           <p>Filter By:</p>
-          <button className='filter--button' onClick={props.filter}>Favorites ❤️</button>
+          <button className='filter--button' onClick={props.toggleFilterFavorites}>Favorites ❤️</button>
         </div>
       </div>
     </div>
