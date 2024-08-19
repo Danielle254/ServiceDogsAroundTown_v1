@@ -57,7 +57,7 @@ export default function NewEntry(props) {
           />          
         </label>
         <br/>
-        <input type='submit'/>
+        <input type='submit' className='submit--button'/>
       </form>
     </div>
   )
