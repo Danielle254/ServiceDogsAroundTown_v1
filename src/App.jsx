@@ -8,8 +8,9 @@ import Footer from './components/Footer'
 
 
 function App() {
-  const [sortBy, setSortBy] = useState(() => JSON.parse(localStorage.getItem('SDAT_sort')) || "date");
+  const [sortBy, setSortBy] = useState(() => localStorage.getItem('SDAT_sort') || "date");
   const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
+  const [filterFavorites, setFilterFavorites] = useState(() => localStorage.getItem('SDAT_filter') || false);
   
 
   // update local storage when list of entries changes
@@ -64,11 +65,15 @@ function App() {
 
       if (sortBy === "name") {
         setSortBy("date");
-        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
+        localStorage.setItem('SDAT_sort', sortBy);
         return prevData.sort(compareDate);
       }
-    })
-    
+    })    
+  }
+
+  function toggleFilterFavorites () {
+    setFilterFavorites(!filterFavorites);
+    localStorage.setItem('SDAT_filter', filterFavorites);
   }
 
   
@@ -82,11 +87,13 @@ function App() {
         />
         <OrganizeList 
         sortBy={sortBy}
-        changeSort={changeSort}        
+        changeSort={changeSort}
+        toggleFilterFavorites={toggleFilterFavorites}        
         />
         <EntryList 
         sortBy={sortBy}
         data={data}
+        filterFavorites={filterFavorites}
         deleteEntry={deleteEntry}
         />
       </main>
