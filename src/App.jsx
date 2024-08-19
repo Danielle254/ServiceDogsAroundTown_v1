@@ -51,14 +51,14 @@ function App() {
       
       if (sortBy === "date") {
         setSortBy("name");
-        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
-        
+        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
         return prevData.sort(compareAlpha);
-
-      } else if (sortBy === "name") {
+      }
+      
+      if (sortBy === "name") {
         setSortBy("date");
         localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
-        
+        return prevData;
       }
     })
     
