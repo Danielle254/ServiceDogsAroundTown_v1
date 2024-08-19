@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 function App() {
   const [sortBy, setSortBy] = useState(() => JSON.parse(localStorage.getItem('SDAT_sort')) || "date");
   const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
-
+  
 
   // update local storage when list of entries changes
   useEffect(() => {
@@ -32,14 +32,36 @@ function App() {
     })
   }
 
-  function changeSort () {
-    if (sortBy === "date") {
-      setSortBy("name");
-      localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
-    } else if (sortBy === "name") {
-      setSortBy("date");
-      localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
+  function compareAlpha(a,b) {
+    const name1 = a.name.toUpperCase();
+    const name2 = b.name.toUpperCase();
+
+    if (name1 < name2) {
+      return -1;
     }
+    if (name1 > name2) {
+      return 1;
+    }
+
+    return 0;
+  }
+
+  function changeSort () {
+    setData(prevData => {
+      
+      if (sortBy === "date") {
+        setSortBy("name");
+        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
+        
+        return prevData.sort(compareAlpha);
+
+      } else if (sortBy === "name") {
+        setSortBy("date");
+        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
+        
+      }
+    })
+    
   }
 
   
