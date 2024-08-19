@@ -10,7 +10,10 @@ export default function OrganizeList(props) {
         <button className='sort--button' onClick={props.changeSort}>Date</button>
         <button className='sort--button' onClick={props.changeSort}>Business Name</button>
       </div>
-      <button className='filter' onClick={props.filter}>Favorites</button>
+      <div className='filter'>
+        <p>Filter By:</p>
+        <button className='filter--button' onClick={props.filter}>Favorites ❤️</button>
+      </div>
     </div>
   )
 }
