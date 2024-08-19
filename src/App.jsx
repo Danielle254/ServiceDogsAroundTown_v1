@@ -46,6 +46,13 @@ function App() {
     return 0;
   }
 
+  function compareDate(a,b) {
+    const date1 = new Date(a.dateVisited);
+    const date2 = new Date(b.dateVisited);
+
+    return date1 - date2;
+  }
+
   function changeSort () {
     setData(prevData => {
       
@@ -54,11 +61,11 @@ function App() {
         localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
         return prevData.sort(compareAlpha);
       }
-      
+
       if (sortBy === "name") {
         setSortBy("date");
         localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
-        return prevData;
+        return prevData.sort(compareDate);
       }
     })
     
