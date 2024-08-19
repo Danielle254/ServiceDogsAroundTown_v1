@@ -31,11 +31,8 @@ h1 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 10px;  
+    color:rgb(24, 24, 79);
 }
-
-
-
-
 
 input, textarea {
     text-align: left;    
@@ -47,7 +44,7 @@ input, textarea {
     flex-direction: row;
     justify-content: center;    
     margin: 2rem auto;
-    border: 2px lightblue solid;
+    border: 2px rgb(36, 172, 221) solid;
     border-radius: 5px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;    
@@ -67,7 +64,17 @@ input, textarea {
 }
 
 /* Entry */
+.entry {
+    border: 1px solid rgb(36, 172, 221); 
+    border-radius: 5px;
+    padding: 0.25rem;
+}
+
 .entry p {
+    margin: 1rem auto;
+}
+
+h3 {
     margin: 0.5rem auto;
 }
 
