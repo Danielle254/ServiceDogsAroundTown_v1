@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function OrganizeList(props) {
+
   let dateButton, nameButton = "";
+
   if (props.sortBy === "date") {
     dateButton = 'sort--button selected';
     nameButton = 'sort--button';
