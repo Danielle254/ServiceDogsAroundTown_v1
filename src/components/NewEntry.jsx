@@ -31,6 +31,8 @@ export default function NewEntry(props) {
         setBusinessName("");
         setInitializeFavorite(false);
         setPersonalNote("");
+        setDateVisited("");
+        setLocation("");
       }}>
         <label>Business Name:</label>
         <input 
