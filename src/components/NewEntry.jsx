@@ -32,55 +32,41 @@ export default function NewEntry(props) {
         setInitializeFavorite(false);
         setPersonalNote("");
       }}>
-        <label>Business Name:
-          <br/>
-          <input 
-          required
-          type='text' 
-          value={businessName}
-          onChange={(e) => setBusinessName(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>Location:
-          <br/>
-          <input 
-          required
-          type='text' 
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          />
-        </label>   
-        <br />
-        <label>Date Visited:
-          <br/>
-          <input 
-          required
-          type='date' 
-          value={dateVisited}
-          onChange={(e) => setDateVisited(e.target.value)}
-          />
-        </label>      
-        <br/>
-        <label>Personal Note:
-          <br/>
-          <textarea 
-          required
-          type='text' 
-          value={personalNote}
-          onChange={(e) => setPersonalNote(e.target.value)}
-          />
-        </label>
-        <br/>
-        <label>
-          Favorite:
-          <input 
-          type='checkbox'
-          className='checkbox' 
-          checked={initializeFavorite}
-          onChange={updateInitializeFavorite}
-          />          
-        </label>
+        <label>Business Name:</label>
+        <input 
+        required
+        type='text' 
+        value={businessName}
+        onChange={(e) => setBusinessName(e.target.value)}
+        />        
+        <label>Location:</label>         
+        <input 
+        required
+        type='text' 
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        />        
+        <label>Date Visited:</label>          
+        <input 
+        required
+        type='date' 
+        value={dateVisited}
+        onChange={(e) => setDateVisited(e.target.value)}
+        />            
+        <label>Personal Note:</label>          
+        <textarea 
+        required
+        type='text' 
+        value={personalNote}
+        onChange={(e) => setPersonalNote(e.target.value)}
+        />       
+        <label>Favorite:</label>
+        <input 
+        type='checkbox'
+        className='checkbox' 
+        checked={initializeFavorite}
+        onChange={updateInitializeFavorite}
+        />        
         <br/>
         <input type='submit' className='submit--button'/>
       </form>
