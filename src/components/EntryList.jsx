@@ -8,6 +8,8 @@ export default function EntryList(props) {
       return (
         <Entry 
         name={entry.name}
+        location={entry.location}
+        dateVisited={entry.dateVisited}
         isFavorite={entry.isFavorite}
         personalNote={entry.personalNote}
         id={entry.id}
