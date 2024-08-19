@@ -148,6 +148,9 @@ button {
 
 .entry p {
     margin: 1rem 0.5rem;
+}
+
+.note {
     text-align: left;
 }
 
