@@ -21,21 +21,29 @@ body {
 /* Banner */
 h1 {
     margin: 4rem auto;
+    font-size: 3rem;
 }
 
 /* NewEntry */
 .new--entry {
     background-color: rgb(36, 172, 221); 
-    width: 300px;
+    max-width: 400px;
     margin: 0 auto; 
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 10px;  
-    color:rgb(24, 24, 79);
+    color:rgb(24, 24, 79);    
 }
 
 input, textarea {
-    text-align: left;    
+    text-align: left; 
+    font-size: 1rem; 
+    margin-top: 0.5rem;  
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1rem auto;
 }
 
 /* OrganizeList */
@@ -50,17 +58,37 @@ input, textarea {
     padding-bottom: 0.5rem;    
 }
 
+button {
+    margin: auto 0.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+
 .sort {
     display: flex;
     flex-direction: row;
     margin-right: 4rem;
 }
 
+.sort--button {
+    background-color: white;    
+}
+
+.filter {
+    background-color: red;
+    color: white;
+}
+
+
 /* EntryList */
 .entry--list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 /* Entry */
@@ -68,20 +96,28 @@ input, textarea {
     border: 1px solid rgb(36, 172, 221); 
     border-radius: 5px;
     padding: 0.25rem;
+    max-width: 400px;
 }
 
 .entry p {
-    margin: 1rem auto;
+    margin: 1rem 0.5rem;
+    text-align: left;
 }
 
 h3 {
     margin: 0.5rem auto;
 }
 
+.entry--button {    
+    background-color: rgb(36, 172, 221);
+    color:rgb(24, 24, 79);
+    margin-bottom: 1rem;
+}
+
 
 /* Footer */
 footer {    
-    margin-top: 6rem;
+    margin: 6rem auto;
 }
 
 footer a {
