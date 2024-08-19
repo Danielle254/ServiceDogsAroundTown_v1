@@ -39,12 +39,12 @@ function App() {
          
       if (sortBy === "date") { 
         setSortBy("name");       
-        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
+        localStorage.setItem('SDAT_sort', JSON.stringify("name"));        
       }
 
       if (sortBy === "name") {
         setSortBy("date");
-        localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));        
+        localStorage.setItem('SDAT_sort', JSON.stringify("date"));        
       }    
   }
   
