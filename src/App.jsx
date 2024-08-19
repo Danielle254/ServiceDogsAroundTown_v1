@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 
 function App() {
-  const [sortBy, setSortBy] = useState('date');
+  const [sortBy, setSortBy] = useState(() => JSON.parse(localStorage.getItem('SDAT_sort')) || "date");
   const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
 
 
@@ -16,6 +16,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('SDAT_data', JSON.stringify(data));
   }, [data]);
+
 
   function addEntry (e, entry) {
     e.preventDefault();
@@ -34,8 +35,10 @@ function App() {
   function changeSort () {
     if (sortBy === "date") {
       setSortBy("name");
+      localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
     } else if (sortBy === "name") {
       setSortBy("date");
+      localStorage.setItem('SDAT_sort', JSON.stringify(sortBy));
     }
   }
 
