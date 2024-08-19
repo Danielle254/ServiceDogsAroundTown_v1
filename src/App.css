@@ -32,7 +32,8 @@ h1 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 10px;  
-    color:rgb(24, 24, 79);    
+    color:rgb(24, 24, 79); 
+    font-weight: bold;   
 }
 
 input, textarea {
@@ -46,11 +47,20 @@ h2 {
     margin: 1rem auto;
 }
 
+.submit--button {
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: rgb(24, 24, 79);
+    color: white;
+    border: none;
+    
+}
+
 /* OrganizeList */
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;    
+    justify-content: space-around;    
     margin: 2rem auto;
     border: 2px rgb(36, 172, 221) solid;
     border-radius: 5px;
@@ -62,21 +72,20 @@ button {
     margin: auto 0.5rem;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 1rem;
 }
 
-.sort {
+.sort, .filter {
     display: flex;
     flex-direction: row;
-    margin-right: 4rem;
 }
 
 .sort--button {
     background-color: white;    
 }
 
-.filter {
+.filter--button {
     background-color: red;
     color: white;
 }
@@ -87,8 +96,9 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    
+    justify-content: space-between;
+    max-width: 1000px;
 }
 
 /* Entry */
