@@ -27,7 +27,7 @@ h1 {
 /* NewEntry */
 .new--entry {
     background-color: rgb(36, 172, 221); 
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto; 
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -36,15 +36,25 @@ h1 {
     font-weight: bold;   
 }
 
+label {
+    font-size: 1.25rem;
+}
+
 input, textarea {
     text-align: left; 
     font-size: 1rem; 
-    margin-top: 0.5rem;  
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;  
+}
+
+.checkbox {
+    margin-left: 0.75rem;
+    transform: scale(1.5);
 }
 
 h2 {
     font-size: 2rem;
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 .submit--button {
@@ -53,7 +63,10 @@ h2 {
     background-color: rgb(24, 24, 79);
     color: white;
     border: none;
-
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
 }
 
 /* OrganizeList */
@@ -76,11 +89,13 @@ button {
     border: none;
     border-radius: 3px;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .sort, .filter {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .sort--button, .filter--button {
@@ -106,7 +121,7 @@ button {
     border: 1px solid rgb(36, 172, 221); 
     border-radius: 5px;
     padding: 0.25rem;
-    max-width: 450px;
+    width: 450px;
 }
 
 .entry p {
