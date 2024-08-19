@@ -95,7 +95,8 @@ h2 {
     font-weight: bold;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; 
-    max-width: 1000px;   
+    max-width: 1000px; 
+    font-size: 1.25rem;  
 }
 
 button {
@@ -103,7 +104,7 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: 1.25rem;
     cursor: pointer;
 }
 
@@ -114,11 +115,16 @@ button {
 }
 
 .sort--button, .filter--button {
-    background-color: white;  
-    border:rgb(24, 24, 79) 1px solid;  
+    color:rgb(24, 24, 79);
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
 }
 
-
+.selected {
+    border-bottom: 2px solid rgb(24, 24, 79);
+    border-radius: 0;
+}
 
 
 /* EntryList */
