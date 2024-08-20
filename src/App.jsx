@@ -5,14 +5,15 @@ import NewEntry from './components/NewEntry'
 import OrganizeList from './components/OrganizeList'
 import EntryList from './components/EntryList'
 import Footer from './components/Footer'
+import EditEntry from './components/EditEntry'
 
 
 function App() {
   const [data, setData] = useState(() => JSON.parse(localStorage.getItem('SDAT_data')) || []);
   const [sortBy, setSortBy] = useState(() => JSON.parse(localStorage.getItem('SDAT_sort')) || "date");  
   const [filterFavorites, setFilterFavorites] = useState(JSON.parse(localStorage.getItem('SDAT_filter')) || false);
-    
-
+  const [editorOpen, setEditorOpen] = useState(false);
+  const [entryToEdit, setEntryToEdit] = useState({});
 
   useEffect(() => {
     localStorage.setItem('SDAT_data', JSON.stringify(data));
@@ -24,6 +25,7 @@ function App() {
     setData([...data, entry]);    
   }
 
+
   function deleteEntry (id) {
     setData(prevData => {
       const newData = prevData.filter(
@@ -31,21 +33,18 @@ function App() {
       )
       return newData;
     })
-  }
+  }  
 
-  
 
-  function changeSort () {    
-         
-      if (sortBy === "date") { 
-        setSortBy("name");       
-        localStorage.setItem('SDAT_sort', JSON.stringify("name"));        
-      }
-
-      if (sortBy === "name") {
-        setSortBy("date");
-        localStorage.setItem('SDAT_sort', JSON.stringify("date"));        
-      }    
+  function changeSort () {         
+    if (sortBy === "date") { 
+      setSortBy("name");       
+      localStorage.setItem('SDAT_sort', JSON.stringify("name"));        
+    }
+    if (sortBy === "name") {
+      setSortBy("date");
+      localStorage.setItem('SDAT_sort', JSON.stringify("date"));        
+    }    
   }
   
 
@@ -53,6 +52,25 @@ function App() {
     setFilterFavorites(!filterFavorites);    
     localStorage.setItem('SDAT_filter', JSON.stringify(!filterFavorites));
   }
+
+  
+  function openEditor (id) {   
+    const editIndex = data.findIndex((each) => each.id === id);    
+    setEntryToEdit(data[editIndex]);
+    setEditorOpen(true);
+  }
+
+  function closeEditor (e, entry) {
+    e.preventDefault();
+    setEditorOpen(false);
+
+    // find index of id using .findIndex method
+    const indexToUpdate = data.findIndex((each) => each.id === entry.id);
+    // update data array with splice method
+    const newData = data.splice(indexToUpdate, 1, entry);
+    setData(newData);
+  }
+
   
 
   return (
@@ -76,8 +94,13 @@ function App() {
       sortBy={sortBy}
       filterFavorites={filterFavorites}
       deleteEntry={deleteEntry}
+      openEditor={openEditor}
       />
-      
+      <EditEntry
+      entryToEdit={entryToEdit}
+      editorOpen={editorOpen}
+      closeEditor={closeEditor} 
+      />      
       <Footer />
     </div>
   )

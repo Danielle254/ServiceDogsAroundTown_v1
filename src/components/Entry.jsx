@@ -54,7 +54,7 @@ export default function Entry(props) {
       <p>{props.location}</p>
       <p>Visited: {displayDate}</p>
       <p className='note'>{props.personalNote}</p>
-      <button className='entry--button'>Edit</button>
+      <button className='entry--button' onClick={() => props.openEditor(id)}>Edit</button>
       <button className='entry--button' onClick={() => props.deleteEntry(id)}>Delete</button>
     </div>
   )

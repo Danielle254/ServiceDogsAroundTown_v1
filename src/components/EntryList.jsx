@@ -45,6 +45,7 @@ export default function EntryList(props) {
           id={entry.id}
           key={entry.id}
           deleteEntry={props.deleteEntry}
+          openEditor={props.openEditor}
           />
         )
       }
@@ -62,6 +63,7 @@ export default function EntryList(props) {
           id={entry.id}
           key={entry.id}
           deleteEntry={props.deleteEntry}
+          openEditor={props.openEditor}
           />
         )
       }
