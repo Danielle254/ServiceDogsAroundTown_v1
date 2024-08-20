@@ -70,8 +70,10 @@ export default function EntryList(props) {
   
   
   return (
-    <div className='entry--list'>
-      {entries}
+    <div className='entry--list-background'>
+      <div className='entry--list'>
+        {entries}
+      </div>
     </div>
   )
 }
