@@ -69,7 +69,7 @@ export default function NewEntry(props) {
           checked={initializeFavorite}
           onChange={updateInitializeFavorite}
           />   
-          <label>Set as Favorite</label>
+          <label>Favorite</label>
         </div>       
         <br/>
         <input type='submit' className='submit--button'/>

@@ -70,6 +70,10 @@ function App() {
     setData(newData);
   }
 
+  function cancelEdit () {
+    setEditorOpen(false);
+  }
+
   
 
   return (
@@ -98,7 +102,8 @@ function App() {
       <EditEntry
       entryToEdit={entryToEdit}
       editorOpen={editorOpen}
-      closeEditor={closeEditor} 
+      closeEditor={closeEditor}
+      cancelEdit={cancelEdit} 
       />      
       <Footer />
     </div>
