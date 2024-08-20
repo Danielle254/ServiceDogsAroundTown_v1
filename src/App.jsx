@@ -57,11 +57,13 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='home--container'>
-        <Banner />      
-        <NewEntry 
-        addEntry={addEntry}
-        />
+      <div className='home--container-background'>
+        <div className='home--container'>
+          <Banner />      
+          <NewEntry 
+          addEntry={addEntry}
+          />
+        </div>
       </div>
       <OrganizeList 
       sortBy={sortBy}
