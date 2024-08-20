@@ -18,6 +18,7 @@ export default function OrganizeList(props) {
   
   return (
     <div className='nav--background'>
+      <h2>My Businesses</h2>
       <div className='nav'>
         <div className='sort' >
           <p>Sort By:</p>
