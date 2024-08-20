@@ -7,33 +7,37 @@
 
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    background-color: rgb(24, 24, 79);
-    color: white;
+    text-align: center;    
 }
 
 
 
 /* App */
+.home--container-background {
+    background-color: rgb(24, 24, 79);
+}
+
 .home--container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto;    
+    color: white;
 }
 
 /* Banner */
 h1 {
     margin: 4rem auto;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-family: "New Amsterdam", sans-serif;
 }
 
 img {
     width: 350px;
     border-radius: 5px;
+    border: 2px solid white;
     box-shadow: rgb(36, 172, 221) -30px -30px 0;    
 }
 
@@ -111,22 +115,30 @@ h2 {
     height: 2rem;
 }
 
+
 /* OrganizeList */
 .nav--background {
     background-color: white;
+    border-bottom: 4px solid rgb(36, 172, 221); 
+    padding-bottom: 1rem;
+}
+
+.nav--background h2 {
+    color:rgb(24, 24, 79);
+    padding-top: 1rem;
 }
 
 .nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;    
-    margin: 2rem auto;    
+    margin: /* 2rem */0 auto;    
     color:rgb(24, 24, 79);
     font-weight: bold;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; 
     max-width: 1000px; 
-    font-size: 1.25rem;  
+    font-size: 1rem;  
 }
 
 button {
@@ -134,7 +146,7 @@ button {
     font-weight: bold;
     border: none;
     border-radius: 3px;
-    font-size: 1.25rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -152,11 +164,16 @@ button {
 }
 
 .selected {
-    box-shadow: 4px 4px 2px -2px rgb(24, 24, 79);
+    box-shadow: 0 4px 0 rgb(24, 24, 79);
+    border-radius: 0;
 }
 
 
 /* EntryList */
+.entry--list-background {
+    background-color: white;
+}
+
 .entry--list {
     display: flex;
     flex-direction: row;
@@ -164,16 +181,18 @@ button {
     gap: 1rem;    
     justify-content: center;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    
 }
 
 /* Entry */
 .entry {
-    border: 1px solid rgb(36, 172, 221); 
+    border: 2px solid rgb(24, 24, 79); 
     border-radius: 5px;
     padding: 0.25rem;
     width: 450px;
-    box-shadow: rgb(36, 172, 221) 1.95px 1.95px 2.6px;
+    box-shadow: rgb(24, 24, 79) 1.95px 1.95px 2.6px;
+    color:rgb(24, 24, 79);
 }
 
 .entry p {
@@ -192,15 +211,24 @@ h3 {
 .entry--button {    
     background-color: rgb(36, 172, 221);
     color:rgb(24, 24, 79);
+    border: 1px solid rgb(24, 24, 79);
     margin-bottom: 1rem;
+    padding: 0.25rem;
 }
 
 
 /* Footer */
 footer {    
-    margin: 6rem auto 4rem auto;
+    background-color: rgb(36, 172, 221);
+    color:rgb(24, 24, 79);
+    padding: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.25rem;
 }
 
 footer a {
-    color: white;
+    color:rgb(24, 24, 79);
 }
