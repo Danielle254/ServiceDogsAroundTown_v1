@@ -178,7 +178,7 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;    
+       
     justify-content: center;
     max-width: 1000px;
     margin: 2rem auto;
@@ -193,6 +193,7 @@ button {
     width: 450px;
     box-shadow: rgb(24, 24, 79) 1.95px 1.95px 2.6px;
     color:rgb(24, 24, 79);
+    margin: 1rem;
 }
 
 .entry p {
