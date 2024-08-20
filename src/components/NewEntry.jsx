@@ -34,41 +34,43 @@ export default function NewEntry(props) {
         setDateVisited("");
         setLocation("");
       }}>
-        <label>Business Name:</label>
+        <label>Business Name *</label>
         <input 
         required
         type='text' 
         value={businessName}
         onChange={(e) => setBusinessName(e.target.value)}
         />        
-        <label>Location:</label>         
+        <label>Location *</label>         
         <input 
         required
         type='text' 
         value={location}
         onChange={(e) => setLocation(e.target.value)}
         />        
-        <label>Date Visited:</label>          
+        <label>Date Visited *</label>          
         <input 
         required
         type='date' 
         value={dateVisited}
         onChange={(e) => setDateVisited(e.target.value)}
         />            
-        <label>Personal Note:</label>          
+        <label>Personal Note *</label>          
         <textarea 
         required
         type='text' 
         value={personalNote}
         onChange={(e) => setPersonalNote(e.target.value)}
-        />       
-        <label>Favorite:</label>
-        <input 
-        type='checkbox'
-        className='checkbox' 
-        checked={initializeFavorite}
-        onChange={updateInitializeFavorite}
-        />        
+        />
+        <div className='favorite--container' >      
+          <input 
+          type='checkbox'
+          className='checkbox' 
+          checked={initializeFavorite}
+          onChange={updateInitializeFavorite}
+          />   
+          <label>Set as Favorite</label>
+        </div>       
         <br/>
         <input type='submit' className='submit--button'/>
       </form>
