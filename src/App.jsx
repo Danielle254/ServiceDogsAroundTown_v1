@@ -88,6 +88,7 @@ function App() {
       </div>
       <OrganizeList 
       sortBy={sortBy}
+      data={data}
       changeSort={changeSort}
       toggleFilterFavorites={toggleFilterFavorites} 
       filterFavorites={filterFavorites}       

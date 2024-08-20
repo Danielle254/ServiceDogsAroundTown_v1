@@ -70,7 +70,9 @@ export default function EntryList(props) {
     )
   }
   
-  
+  if (props.data.length === 0) {
+    return null;
+  }
   return (
     <div className='entry--list-background'>
       <div className='entry--list'>

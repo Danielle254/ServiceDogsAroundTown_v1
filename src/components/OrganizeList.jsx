@@ -15,7 +15,9 @@ export default function OrganizeList(props) {
   
   const filterButton = props.filterFavorites ? "filter--button selected" : "filter--button";
   
-  
+  if (props.data.length === 0) {
+    return null;
+  }
   return (
     <div className='nav--background'>
       <h2>My Businesses</h2>
