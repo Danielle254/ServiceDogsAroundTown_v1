@@ -57,24 +57,25 @@ function App() {
 
   return (
     <div className='App'>
-      <Banner />
-      <main>
+      <div className='home--container'>
+        <Banner />      
         <NewEntry 
         addEntry={addEntry}
         />
-        <OrganizeList 
-        sortBy={sortBy}
-        changeSort={changeSort}
-        toggleFilterFavorites={toggleFilterFavorites} 
-        filterFavorites={filterFavorites}       
-        />
-        <EntryList 
-        data={data}
-        sortBy={sortBy}
-        filterFavorites={filterFavorites}
-        deleteEntry={deleteEntry}
-        />
-      </main>
+      </div>
+      <OrganizeList 
+      sortBy={sortBy}
+      changeSort={changeSort}
+      toggleFilterFavorites={toggleFilterFavorites} 
+      filterFavorites={filterFavorites}       
+      />
+      <EntryList 
+      data={data}
+      sortBy={sortBy}
+      filterFavorites={filterFavorites}
+      deleteEntry={deleteEntry}
+      />
+      
       <Footer />
     </div>
   )
