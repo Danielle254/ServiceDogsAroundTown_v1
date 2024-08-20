@@ -1,33 +1,29 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 
 
 export default function EditEntry(props) {
-  
-    const [editBusinessName, setEditBusinessName] = useState('');
-    const [editLocation, setEditLocation] = useState(props.entryToEdit.location);
-    const [editDateVisited, setEditDateVisited] = useState(props.entryToEdit.dateVisited);
-    const [editPersonalNote, setEditPersonalNote] = useState(props.entryToEdit.personalNote);
-    const [editFavorite, setEditFavorite] = useState(props.entryToEdit.isFavorite);
-  
-    useEffect(() => {
-        setEditBusinessName(props.entryToEdit.name);
-    }, []);
-
-    
-    function updateEditFavorite () {
-      setEditFavorite(!editFavorite);
-    }
-  
-    const editedEntry = {
-      name: editBusinessName,
-      location: editLocation,
-      dateVisited: editDateVisited,
-      isFavorite: editFavorite,
-      personalNote: editPersonalNote,
-      id: props.entryToEdit.id
-    }
-    
     if (props.editorOpen) {
+        const [editBusinessName, setEditBusinessName] = useState(props.entryToEdit.name);
+        const [editLocation, setEditLocation] = useState(props.entryToEdit.location);
+        const [editDateVisited, setEditDateVisited] = useState(props.entryToEdit.dateVisited);
+        const [editPersonalNote, setEditPersonalNote] = useState(props.entryToEdit.personalNote);
+        const [editFavorite, setEditFavorite] = useState(props.entryToEdit.isFavorite);
+        const entryId = props.entryToEdit.id;
+        
+        function updateEditFavorite () {
+        setEditFavorite(!editFavorite);
+        }
+    
+        const editedEntry = {
+        name: editBusinessName,
+        location: editLocation,
+        dateVisited: editDateVisited,
+        isFavorite: editFavorite,
+        personalNote: editPersonalNote,
+        id: entryId
+        }
+    
+    
         return (
             <div className='edit--entry'>        
               <form onSubmit={(e) => {

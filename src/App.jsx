@@ -63,11 +63,10 @@ function App() {
   function closeEditor (e, entry) {
     e.preventDefault();
     setEditorOpen(false);
-
-    // find index of id using .findIndex method
+    console.log("function ran");
     const indexToUpdate = data.findIndex((each) => each.id === entry.id);
-    // update data array with splice method
-    const newData = data.splice(indexToUpdate, 1, entry);
+    console.log(indexToUpdate);
+    const newData = data.toSpliced(indexToUpdate, 1, entry);
     setData(newData);
   }
 
