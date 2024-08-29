@@ -73,6 +73,13 @@ export default function NewEntry(props) {
         </div>       
         <br/>
         <input type='submit' className='submit--button'/>
+        <button onClick={(e) => {
+        e.preventDefault();
+        setBusinessName("");
+        setInitializeFavorite(false);
+        setPersonalNote("");
+        setDateVisited(null);
+        setLocation("");}} className='clear--button'>Clear</button>
       </form>
     </div>
   )
