@@ -61,6 +61,7 @@ export default function NewEntry(props) {
         type='text' 
         value={personalNote}
         onChange={(e) => setPersonalNote(e.target.value)}
+        placeholder='How was your experience in regards to the safety and comfort of your service dog?'
         />
         <div className='favorite--container' >      
           <input 
