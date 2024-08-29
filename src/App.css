@@ -267,6 +267,7 @@ h3 {
     height: 2rem;
     padding-bottom: 0.25rem;
     border: 2px solid rgb(24, 24, 79); 
+    cursor: pointer;
 }
 
 .cancel-edit {
@@ -279,6 +280,7 @@ h3 {
     padding-bottom: 0.25rem;
     width: 100%;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 
