@@ -22,7 +22,7 @@ export default function EntryList(props) {
     const date1 = new Date(a.dateVisited);
     const date2 = new Date(b.dateVisited);
 
-    return date1 - date2;
+    return date2 - date1;
   }
 
   if (props.sortBy === "date") {
