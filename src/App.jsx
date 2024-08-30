@@ -60,6 +60,12 @@ function App() {
     setEditorOpen(true);
   }
 
+  function escape (e) {
+    if (e.key === "Escape") {
+      setEditorOpen(false);
+    }
+  }
+
   function closeEditor (e, entry) {
     e.preventDefault();
     setEditorOpen(false);
@@ -105,6 +111,7 @@ function App() {
       editorOpen={editorOpen}
       closeEditor={closeEditor}
       cancelEdit={cancelEdit} 
+      escape={escape}
       />      
       <Footer />
     </div>

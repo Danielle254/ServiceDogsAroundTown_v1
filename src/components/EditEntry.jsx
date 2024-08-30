@@ -26,12 +26,13 @@ export default function EditEntry(props) {
     
         return (
             <div className='edit--entry'>
-                <div className="edit-form-background">       
+                <div className="edit-form-background" onKeyDown={(e) => {props.escape(e)}}>       
                     <form onSubmit={(e) => {
                         props.closeEditor(e, editedEntry);          
                         }}>
                         <label>Business Name</label>
                         <input 
+                        autoFocus
                         type='text' 
                         value={editBusinessName}                
                         onChange={(e) => setEditBusinessName(e.target.value)}
@@ -64,8 +65,8 @@ export default function EditEntry(props) {
                         <label>Favorite</label>
                         </div>       
                         <br/>
-                        <input type='submit' className='save--button' value='Save'/>
-                        <button onClick={props.cancelEdit} className="cancel-edit">Cancel</button>
+                        <input type='submit' className='save--button' value='Save' tabIndex={0}/>
+                        <button onClick={props.cancelEdit} className="cancel-edit" tabIndex={0}>Cancel</button>
                     </form>
                     
               </div> 
