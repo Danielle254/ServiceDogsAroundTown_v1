@@ -32,7 +32,8 @@ This is meant to be a single-user, private application, meaning data is not shar
 ## Running the project locally
 
 * Clone this repo
-* In the command line / terminal, execute ```npm run dev``` to open a browser
+* In the command line / terminal, execute ```npm run dev```
+* Control + Click the localhost link generated in the command line / terminal
 
 
 ## Dependencies
