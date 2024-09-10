@@ -34,30 +34,34 @@ export default function NewEntry(props) {
         setDateVisited("");
         setLocation("");
       }}>
-        <label>Business Name *</label>
+        <label for='name'>Business Name *</label>
         <input 
         required
+        id='name'
         type='text' 
         value={businessName}
         onChange={(e) => setBusinessName(e.target.value)}
         />        
-        <label>Location *</label>         
+        <label for='location'>Location *</label>         
         <input 
         required
+        id='location'
         type='text' 
         value={location}
         onChange={(e) => setLocation(e.target.value)}
         />        
-        <label>Date Visited *</label>          
+        <label for='date'>Date Visited *</label>          
         <input 
         required
+        id='date'
         type='date' 
         value={dateVisited}
         onChange={(e) => setDateVisited(e.target.value)}
         />            
-        <label>Personal Note *</label>          
+        <label for='note'>Personal Note *</label>          
         <textarea 
         required
+        id='note'
         type='text' 
         value={personalNote}
         onChange={(e) => setPersonalNote(e.target.value)}
@@ -66,11 +70,12 @@ export default function NewEntry(props) {
         <div className='favorite--container' >      
           <input 
           type='checkbox'
+          id='fav'
           className='checkbox' 
           checked={initializeFavorite}
           onChange={updateInitializeFavorite}
           />   
-          <label>Favorite</label>
+          <label for='fav'>Favorite</label>
         </div>       
         <br/>
         <input type='submit' className='submit--button'/>
