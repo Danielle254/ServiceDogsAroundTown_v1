@@ -30,39 +30,48 @@ export default function EditEntry(props) {
                     <form onSubmit={(e) => {
                         props.closeEditor(e, editedEntry);          
                         }}>
-                        <label>Business Name</label>
+                        <label for='edit-name'>Business Name</label>
                         <input 
                         autoFocus
+                        required
+                        id="edit-name"
                         type='text' 
                         value={editBusinessName}                
                         onChange={(e) => setEditBusinessName(e.target.value)}
                         />        
-                        <label>Location</label>         
+                        <label for='edit-location'>Location</label>         
                         <input 
+                        required
                         type='text' 
+                        id="edit-location"
                         value={editLocation}
                         onChange={(e) => setEditLocation(e.target.value)}
                         />        
-                        <label>Date Visited</label>          
+                        <label for='edit-date'>Date Visited</label>          
                         <input 
+                        required
+                        id="edit-date"
                         type='date' 
                         value={editDateVisited}
                         onChange={(e) => setEditDateVisited(e.target.value)}
                         />            
-                        <label>Personal Note</label>          
+                        <label for='edit-note'>Personal Note</label>          
                         <textarea 
+                        required
+                        id="edit-note"
                         type='text' 
                         value={editPersonalNote}
                         onChange={(e) => setEditPersonalNote(e.target.value)}
                         />
                         <div className='favorite--container' >      
-                        <input 
-                        type='checkbox'
-                        className='checkbox' 
-                        checked={editFavorite}
-                        onChange={updateEditFavorite}
-                        />   
-                        <label>Favorite</label>
+                            <input 
+                            id="edit-fav"
+                            type='checkbox'
+                            className='checkbox' 
+                            checked={editFavorite}
+                            onChange={updateEditFavorite}
+                            />   
+                            <label for='edit-fav'>Favorite</label>
                         </div>       
                         <br/>
                         <input type='submit' className='save--button' value='Save' tabIndex={0}/>
